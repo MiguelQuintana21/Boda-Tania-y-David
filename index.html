@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tania & David - Nuestra Boda</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        .serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 20px;
+            letter-spacing: 2px;
+            color: #666;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .desktop-menu {
+            display: flex;
+        }
+
+        .desktop-menu a {
+            margin-left: 30px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .desktop-menu a:hover {
+            color: #b38c52;
+        }
+
+        .mobile-menu {
+            display: none;
+            width: 100%;
+            padding-bottom: 10px;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background-color: #f5f5f5;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            color: #333;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.3rem;
+            margin: 30px 0;
+            color: #666;
+        }
+
+        .date {
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            margin: 30px 0 10px;
+        }
+
+        .divider {
+            width: 40px;
+            height: 1px;
+            background-color: #d1d1d1;
+            margin: 30px auto;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        section.alt {
+            background-color: #f9f9f9;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .grid-item {
+            text-align: center;
+        }
+
+        .grid-item h3 {
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+
+        .grid-item p {
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .desktop-menu {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+
+        }
+
+
+        /* Flores SVG */
+        .floral-svg {
+            position: absolute;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .floral-svg.left {
+            left: -450px;
+            top: 16%;
+            width: 890px;
+        }
+
+        .floral-svg.right {
+            right: -350px;
+            top: 16%;
+            width: 700px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Flores SVG -->
+    <!-- Flor izquierda -->
+    <svg class="floral-svg left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+        <!-- Rama principal -->
+        <path d="M300,350 C350,300 380,250 400,200 C420,150 430,100 450,50" fill="none" stroke="#7D9D7F"
+            stroke-width="2" />
+
+        <!-- Hojas en la rama principal -->
+        <path d="M400,200 C420,190 440,200 450,180 C460,160 450,140 430,135 C410,130 390,150 400,200" fill="#A5C8A7"
+            opacity="0.8" />
+        <path d="M430,150 C450,140 470,150 480,130 C490,110 480,90 460,85 C440,80 420,100 430,150" fill="#7D9D7F"
+            opacity="0.8" />
+        <path d="M370,250 C390,240 410,250 420,230 C430,210 420,190 400,185 C380,180 360,200 370,250" fill="#A5C8A7"
+            opacity="0.8" />
+
+        <!-- Flores principales -->
+        <!-- Flor 1 -->
+        <circle cx="450" cy="50" r="20" fill="#F8E8EE" opacity="0.9" />
+        <circle cx="460" cy="45" r="20" fill="#F8E8EE" opacity="0.9" />
+        <circle cx="440" cy="45" r="20" fill="#F8E8EE" opacity="0.9" />
+        <circle cx="450" cy="40" r="20" fill="#F8E8EE" opacity="0.9" />
+        <circle cx="450" cy="50" r="8" fill="#FFDB99" />
+
+        <!-- Flor 2 -->
+        <circle cx="330" cy="320" r="18" fill="#F8E8EE" opacity="0.9" />
+        <circle cx="340" cy="315" r="18" fill="#F8E8EE" opacity="0.9" />
+        <circle cx="320" cy="315" r="18" fill="#F8E8EE" opacity="0.9" />
+        <circle cx="330" cy="310" r="18" fill="#F8E8EE" opacity="0.9" />
+        <circle cx="330" cy="320" r="7" fill="#FFDB99" />
+
+        <!-- Rama secundaria -->
+        <path d="M300,350 C250,300 220,280 180,240" fill="none" stroke="#7D9D7F" stroke-width="2" />
+
+        <!-- Hojas en rama secundaria -->
+        <path d="M220,280 C210,260 190,265 180,250 C170,235 175,215 195,205 C215,195 235,210 220,280" fill="#A5C8A7"
+            opacity="0.8" />
+        <path d="M240,300 C230,280 210,285 200,270 C190,255 195,235 215,225 C235,215 255,230 240,300" fill="#7D9D7F"
+            opacity="0.8" />
+
+        <!-- Flor 3 -->
+        <circle cx="180" cy="240" r="15" fill="#F8E8EE" opacity="0.9" />
+        <circle cx="190" cy="235" r="15" fill="#F8E8EE" opacity="0.9" />
+        <circle cx="170" cy="235" r="15" fill="#F8E8EE" opacity="0.9" />
+        <circle cx="180" cy="230" r="15" fill="#F8E8EE" opacity="0.9" />
+        <circle cx="180" cy="240" r="6" fill="#FFDB99" />
+
+        <!-- Pequeñas flores decorativas -->
+        <circle cx="390" cy="220" r="6" fill="#F8E8EE" />
+        <circle cx="385" cy="215" r="6" fill="#F8E8EE" />
+        <circle cx="395" cy="215" r="6" fill="#F8E8EE" />
+        <circle cx="390" cy="210" r="6" fill="#F8E8EE" />
+        <circle cx="390" cy="220" r="2" fill="#FFDB99" />
+
+        <circle cx="420" cy="120" r="6" fill="#F8E8EE" />
+        <circle cx="415" cy="115" r="6" fill="#F8E8EE" />
+        <circle cx="425" cy="115" r="6" fill="#F8E8EE" />
+        <circle cx="420" cy="110" r="6" fill="#F8E8EE" />
+        <circle cx="420" cy="120" r="2" fill="#FFDB99" />
+
+        <circle cx="250" cy="270" r="5" fill="#F8E8EE" />
+        <circle cx="245" cy="265" r="5" fill="#F8E8EE" />
+        <circle cx="255" cy="265" r="5" fill="#F8E8EE" />
+        <circle cx="250" cy="260" r="5" fill="#F8E8EE" />
+        <circle cx="250" cy="270" r="2" fill="#FFDB99" />
+    </svg>
+
+    <!-- Flor derecha -->
+    <svg class="floral-svg right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+        <!-- Rama principal -->
+        <path d="M300,350 C350,300 380,250 400,200 C420,150 430,100 450,50" fill="none" stroke="#7D9D7F"
+            stroke-width="2" />
+
+        <!-- Hojas en la rama principal -->
+        <path d="M400,200 C420,190 440,200 450,180 C460,160 450,140 430,135 C410,130 390,150 400,200" fill="#A5C8A7"
+            opacity="0.8" />
+        <path d="M430,150 C450,140 470,150 480,130 C490,110 480,90 460,85 C440,80 420,100 430,150" fill="#7D9D7F"
+            opacity="0.8" />
+        <path d="M370,250 C390,240 410,250 420,230 C430,210 420,190 400,185 C380,180 360,200 370,250" fill="#A5C8A7"
+            opacity="0.8" />
+
+        <!-- Flores principales -->
+        <!-- Flor 1 -->
+        <circle cx="450" cy="50" r="20" fill="#F8E8EE" opacity="0.9" />
+        <circle cx="460" cy="45" r="20" fill="#F8E8EE" opacity="0.9" />
+        <circle cx="440" cy="45" r="20" fill="#F8E8EE" opacity="0.9" />
+        <circle cx="450" cy="40" r="20" fill="#F8E8EE" opacity="0.9" />
+        <circle cx="450" cy="50" r="8" fill="#FFDB99" />
+
+        <!-- Flor 2 -->
+        <circle cx="330" cy="320" r="18" fill="#F8E8EE" opacity="0.9" />
+        <circle cx="340" cy="315" r="18" fill="#F8E8EE" opacity="0.9" />
+        <circle cx="320" cy="315" r="18" fill="#F8E8EE" opacity="0.9" />
+        <circle cx="330" cy="310" r="18" fill="#F8E8EE" opacity="0.9" />
+        <circle cx="330" cy="320" r="7" fill="#FFDB99" />
+
+        <!-- Rama secundaria -->
+        <path d="M300,350 C250,300 220,280 180,240" fill="none" stroke="#7D9D7F" stroke-width="2" />
+
+        <!-- Hojas en rama secundaria -->
+        <path d="M220,280 C210,260 190,265 180,250 C170,235 175,215 195,205 C215,195 235,210 220,280" fill="#A5C8A7"
+            opacity="0.8" />
+        <path d="M240,300 C230,280 210,285 200,270 C190,255 195,235 215,225 C235,215 255,230 240,300" fill="#7D9D7F"
+            opacity="0.8" />
+
+        <!-- Flor 3 -->
+        <circle cx="180" cy="240" r="15" fill="#F8E8EE" opacity="0.9" />
+        <circle cx="190" cy="235" r="15" fill="#F8E8EE" opacity="0.9" />
+        <circle cx="170" cy="235" r="15" fill="#F8E8EE" opacity="0.9" />
+        <circle cx="180" cy="230" r="15" fill="#F8E8EE" opacity="0.9" />
+        <circle cx="180" cy="240" r="6" fill="#FFDB99" />
+
+        <!-- Pequeñas flores decorativas -->
+        <circle cx="390" cy="220" r="6" fill="#F8E8EE" />
+        <circle cx="385" cy="215" r="6" fill="#F8E8EE" />
+        <circle cx="395" cy="215" r="6" fill="#F8E8EE" />
+        <circle cx="390" cy="210" r="6" fill="#F8E8EE" />
+        <circle cx="390" cy="220" r="2" fill="#FFDB99" />
+
+        <circle cx="420" cy="120" r="6" fill="#F8E8EE" />
+        <circle cx="415" cy="115" r="6" fill="#F8E8EE" />
+        <circle cx="425" cy="115" r="6" fill="#F8E8EE" />
+        <circle cx="420" cy="110" r="6" fill="#F8E8EE" />
+        <circle cx="420" cy="120" r="2" fill="#FFDB99" />
+
+        <circle cx="250" cy="270" r="5" fill="#F8E8EE" />
+        <circle cx="245" cy="265" r="5" fill="#F8E8EE" />
+        <circle cx="255" cy="265" r="5" fill="#F8E8EE" />
+        <circle cx="250" cy="260" r="5" fill="#F8E8EE" />
+        <circle cx="250" cy="270" r="2" fill="#FFDB99" />
+    </svg>
+
+
+
+
+    <!-- Header/Navegación -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">T&D</a>
+
+                <button class="menu-toggle" id="menuToggle">☰</button>
+
+                <nav class="desktop-menu">
+                    <a href="#inicio">INICIO</a>
+                    <a href="#evento">EVENTO</a>
+                    <a href="#info">INFORMACIÓN</a>
+                    <a href="#regalos">REGALOS</a>
+                </nav>
+            </div>
+
+            <nav class="mobile-menu" id="mobileMenu">
+                <a href="#inicio">INICIO</a>
+                <a href="#evento">EVENTO</a>
+                <a href="#info">INFORMACIÓN</a>
+                <a href="#regalos">REGALOS</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>TANIA Y DAVID</h1>
+
+                <div class="divider"></div>
+
+                <p class="quote">"El amor, por no tener geografía, no conoce límites..."</p>
+
+                <p class="date">20 DE DICIEMBRE DE 2025</p>
+
+                <p>¡Te esperamos!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Padres -->
+    <section class="alt">
+        <div class="container">
+            <h2 class="section-title">Con la bendición de nuestros padres</h2>
+
+            <div class="grid">
+                <div class="grid-item">
+                    <p><strong>Gricelda Alvarez Zambade</strong></p>
+                    <p><strong>Guadalupe Ceballos Madueña<strong></strong></p>
+                </div>
+
+                <div class="grid-item">
+                    <p><strong>Alma Rosa Nieblas Lizarraga</strong></p>
+                    <p><strong>Angel Peñaloza Moctezuma<strong></strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Evento -->
+    <section id="evento">
+        <div class="container">
+            <h2 class="section-title">Queremos compartir nuestra historia de amor con ustedes</h2>
+
+            <div style="max-width: 500px; margin: 0 auto; text-align: center;">
+                <p style="font-size: 1.3rem; font-weight: 500; margin-bottom: 10px;">20 de Diciembre de 2025</p>
+                <p>4:00 p.m.</p>
+                <p style="margin: 20px 0 10px;">Mazatlán, Sinaloa</p>
+                <p>Observatorio</p>
+                <p>1873</p>
+                <img src="img/logo_observatorio(sin_fondo).png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Información -->
+    <section id="info" class="alt">
+        <div class="container">
+            <h2 class="section-title">Información</h2>
+
+            <div class="grid">
+                <div class="grid-item">
+                    <h3>Código de vestimenta</h3>
+                    <p>Hombres: Etiqueta</p>
+                    <p>Mujeres: Vestido Gala</p>
+                    <img src="img/vestimenta.jpeg" alt="">
+                </div>
+
+                <div class="grid-item">
+                    <img src="img/icons8-location-100.png" alt="" style="height: 50px; width: 50px;">
+                    <h3>Sugerencia de Hospedaje</h3>
+                    <p>Best Western Posada Freeman</p>
+                    <p>Código de Reservación:</p>
+                    <p>David & Tania</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Regalos -->
+    <section id="regalos">
+        <div class="container">
+            <h2 class="section-title">Mesa de Regalos</h2>
+
+            <div class="grid">
+                <div class="grid-item">
+                    <h3>Sugerencia de Regalo</h3>
+                    <p>Liverpool</p>
+                    <p>Enlace a la mesa de regalos:</p>
+                    <p>https://www.liverpool.com.mx/Mesa_de_regalos<a href="https://www.liverpool.com.mx/"
+                            target="_blank"></p>
+
+                </div>
+
+                <div class="grid-item">
+                    <h3>Transferencia</h3>
+                    <p>CityBanamex</p>
+                    <p>David Josue Peñaloza Nieblas</p>
+                    <p>Clabe: 002290702075062639</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Script para menú responsivo (vanilla JavaScript, sin dependencias)
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            // Estado inicial del menú
+            let menuOpen = false;
+
+            menuToggle.addEventListener('click', function () {
+                if (menuOpen) {
+                    mobileMenu.style.display = 'none';
+                    menuOpen = false;
+                } else {
+                    mobileMenu.style.display = 'block';
+                    menuOpen = true;
+                }
+            });
+
+            // Cerrar menú al hacer clic en un enlace
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    mobileMenu.style.display = 'none';
+                    menuOpen = false;
+                });
+            });
+
+            // Ajustar menú al cambiar el tamaño de la ventana
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 768) {
+                    mobileMenu.style.display = 'none';
+                    menuOpen = false;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
