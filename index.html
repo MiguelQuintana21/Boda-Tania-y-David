@@ -973,6 +973,286 @@
                 <img style="width: 20%;" src="img/observatorio.png" alt="">
             </div>
         </div>
+        <div class="footer-rsvp fade-in">
+            <p style="font-size: 1.3rem; font-weight: 500; margin-bottom: 10px;">Cuenta regresiva</p>
+            <div class="clock-countdown">
+                <div class="clock-container">
+                    <div class="clock-face">
+                        <div class="clock-center"></div>
+                        <div class="clock-hand hour-hand"></div>
+                        <div class="clock-hand minute-hand"></div>
+                        <div class="clock-hand second-hand"></div>
+                        
+                        <div class="clock-numbers">
+                            <span class="clock-number n12">12</span>
+                            <span class="clock-number n3">3</span>
+                            <span class="clock-number n6">6</span>
+                            <span class="clock-number n9">9</span>
+                        </div>
+                        
+                        <div class="clock-marks">
+                            <div class="clock-mark"></div>
+                            <div class="clock-mark"></div>
+                            <div class="clock-mark"></div>
+                            <div class="clock-mark"></div>
+                            <div class="clock-mark"></div>
+                            <div class="clock-mark"></div>
+                            <div class="clock-mark"></div>
+                            <div class="clock-mark"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="countdown-time">
+                    <div class="time-unit">
+                        <div class="time-number" id="days">255</div>
+                        <div class="time-label">Días</div>
+                    </div>
+                    <div class="time-unit">
+                        <div class="time-number" id="hours">06</div>
+                        <div class="time-label">Horas</div>
+                    </div>
+                    <div class="time-unit">
+                        <div class="time-number" id="minutes">42</div>
+                        <div class="time-label">Minutos</div>
+                    </div>
+                </div>
+            </div>
+            
+            <style>
+            .clock-countdown {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 40px auto;
+                max-width: 600px;
+            }
+            
+            .clock-container {
+                width: 200px;
+                height: 200px;
+                position: relative;
+                margin-bottom: 30px;
+            }
+            
+            .clock-face {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                background-color: #F9FAF5;
+                border: 4px solid #A38350;
+                box-shadow: 0 0 30px rgba(115, 117, 102, 0.2), inset 0 0 10px rgba(115, 117, 102, 0.1);
+                position: relative;
+            }
+            
+            .clock-center {
+                position: absolute;
+                width: 12px;
+                height: 12px;
+                background-color: #A38350;
+                border-radius: 50%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 10;
+            }
+            
+            .clock-hand {
+                position: absolute;
+                background-color: #737566;
+                transform-origin: bottom center;
+                bottom: 50%;
+                left: 50%;
+                border-radius: 10px;
+                transform: translateX(-50%);
+            }
+            
+            .hour-hand {
+                width: 4px;
+                height: 50px;
+                animation: rotateHourHand 86400s linear infinite;
+            }
+            
+            .minute-hand {
+                width: 3px;
+                height: 70px;
+                background-color: #737566;
+                animation: rotateMinuteHand 3600s linear infinite;
+            }
+            
+            .second-hand {
+                width: 2px;
+                height: 80px;
+                background-color: #C8AA76;
+                animation: rotateSecondHand 60s linear infinite;
+            }
+            
+            .clock-numbers {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+            }
+            
+            .clock-number {
+                position: absolute;
+                font-family: 'Cormorant Garamond', serif;
+                font-size: 18px;
+                color: #737566;
+                font-weight: 500;
+            }
+            
+            .n12 {
+                top: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .n3 {
+                top: 50%;
+                right: 10px;
+                transform: translateY(-50%);
+            }
+            
+            .n6 {
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .n9 {
+                top: 50%;
+                left: 10px;
+                transform: translateY(-50%);
+            }
+            
+            .clock-marks {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+            }
+            
+            .clock-mark {
+                position: absolute;
+                width: 3px;
+                height: 10px;
+                background-color: #A4A593;
+                left: 50%;
+                top: 5px;
+                transform: translateX(-50%);
+                transform-origin: center 90px;
+            }
+            
+            .clock-mark:nth-child(1) { transform: rotate(30deg) translateY(-90px); }
+            .clock-mark:nth-child(2) { transform: rotate(60deg) translateY(-90px); }
+            .clock-mark:nth-child(3) { transform: rotate(120deg) translateY(-90px); }
+            .clock-mark:nth-child(4) { transform: rotate(150deg) translateY(-90px); }
+            .clock-mark:nth-child(5) { transform: rotate(210deg) translateY(-90px); }
+            .clock-mark:nth-child(6) { transform: rotate(240deg) translateY(-90px); }
+            .clock-mark:nth-child(7) { transform: rotate(300deg) translateY(-90px); }
+            .clock-mark:nth-child(8) { transform: rotate(330deg) translateY(-90px); }
+            
+            .countdown-time {
+                display: flex;
+                justify-content: center;
+                gap: 30px;
+                margin-top: 20px;
+            }
+            
+            .time-unit {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                min-width: 100px;
+            }
+            
+            .time-number {
+                font-size: 42px;
+                font-weight: 400;
+                color: #A38350;
+                font-family: 'Cormorant Garamond', serif;
+                margin-bottom: 5px;
+            }
+            
+            .time-label {
+                font-size: 14px;
+                color: #737566;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-weight: 400;
+            }
+            
+            /* Animaciones */
+            @keyframes rotateHourHand {
+                from { transform: translateX(-50%) rotate(0deg); }
+                to { transform: translateX(-50%) rotate(360deg); }
+            }
+            
+            @keyframes rotateMinuteHand {
+                from { transform: translateX(-50%) rotate(0deg); }
+                to { transform: translateX(-50%) rotate(360deg); }
+            }
+            
+            @keyframes rotateSecondHand {
+                from { transform: translateX(-50%) rotate(0deg); }
+                to { transform: translateX(-50%) rotate(360deg); }
+            }
+            
+            /* Modo oscuro */
+            .dark-theme .clock-face {
+                background-color: #737566;
+                border-color: #C8AA76;
+            }
+            
+            .dark-theme .clock-center {
+                background-color: #C8AA76;
+            }
+            
+            .dark-theme .hour-hand,
+            .dark-theme .minute-hand {
+                background-color: #F9FAF5;
+            }
+            
+            .dark-theme .second-hand {
+                background-color: #C8AA76;
+            }
+            
+            .dark-theme .clock-number {
+                color: #F9FAF5;
+            }
+            
+            .dark-theme .clock-mark {
+                background-color: #A4A593;
+            }
+            
+            .dark-theme .time-number {
+                color: #C8AA76;
+            }
+            
+            .dark-theme .time-label {
+                color: #F9FAF5;
+            }
+            
+            /* Responsive */
+            @media (max-width: 576px) {
+                .countdown-time {
+                    flex-direction: column;
+                    gap: 15px;
+                }
+                
+                .clock-container {
+                    width: 180px;
+                    height: 180px;
+                }
+                
+                .time-number {
+                    font-size: 36px;
+                }
+            }
+            </style>
     </section>
 
     <!-- Sección Información -->
