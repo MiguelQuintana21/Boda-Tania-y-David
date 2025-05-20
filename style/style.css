@@ -1555,7 +1555,7 @@
             left: 3.2em;
         }
 
-        .name {
+        .name_tarjeta {
             position: absolute;
             font-weight: bold;
             font-size: 9px;
@@ -1848,7 +1848,7 @@
 
 .icon {
   text-decoration: none;
-  color: #fff;
+  color: #ffffff;
   display: block;
   position: relative;
 }
@@ -2020,3 +2020,89 @@
 .btn:active .icon {
   transform: scale(0.85);
 }
+
+
+/* estilo para el mapa */
+ .map-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+            overflow: hidden;
+        }
+        
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Estilos adicionales para hacer la página más atractiva */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .info {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+        
+        /* Media queries para diferentes tamaños de pantalla */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 20px;
+            }
+            
+            .map-container {
+                padding-bottom: 75%; /* Relación de aspecto más alta para móviles */
+            }
+
+
+            /* Estilos para hacer el contenedor responsive */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+            overflow: hidden;
+        }
+
+
+
+      
+        
+     
+        }
